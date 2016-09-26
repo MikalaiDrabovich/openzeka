@@ -172,4 +172,4 @@ fabric.properties
 /runtests.sh
 /uploads/
 /tests/
-/migrations/
+/migrations/.idea
