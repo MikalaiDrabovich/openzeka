@@ -1,0 +1,91 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+    <div class="row">
+        <!-- Title Block -->
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 title-block">
+            <!-- Title Block Container -->
+            <div class="title-block-container text-center">
+                <!-- Title -->
+                <h2>{% trans %}Welcome to User Page{% endtrans %}</h2>
+            </div><!-- /End Title Block Container -->
+        </div><!-- /End Title Block -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Documetation</h3>
+                </div>
+                <div class="panel-body text-danger">We are working on documentation. You can access below links for
+                    draft documentation.
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success"><a
+                            href="https://github.com/ferhatkurt/openzeka/wiki">Github Wiki</a> || <a
+                            href="https://github.com/ferhatkurt/openzeka">Github Source</a></li>
+                    <li class="list-group-item list-group-item-success"><a href="http://openzeka.com">Open Zeka Support
+                        Site</a></li>
+                    <li class="list-group-item list-group-item-success"><a
+                            href="https://groups.google.com/forum/#!forum/open-zeka">Open Zeka Google Groups</a></li>
+                </ul>
+                <div class="panel-footer">Mail: openzeka@gmail.com</div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!-- Content Block Container -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- Title -->
+                            <h4><a href="{{ url_for('core.user_profile_page') }}" title="Profile">Profile</a></h4>
+
+                            <!-- Description -->
+                            <p>You can edit your profile informations and change password.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!-- Content Block Container -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- Title -->
+                            <h4><a href="{{ url_for('core.list_application') }}" title="Applications">Applications</a>
+                            </h4>
+
+                            <!-- Description -->
+                            <p>You can create and edit applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!-- Content Block Container -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- Title -->
+                            <h4><a href="{{ url_for('core.usage_report') }}" title="Usage">Usage</a></h4>
+
+                            <!-- Description -->
+                            <p>You can follow your API usages.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!-- Content Block Container -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- Title -->
+                            <h4><a href="{{ url_for('core.billing_page') }}" title="Billing">Billing</a></h4>
+
+                            <!-- Description -->
+                            <p>You can change billing settings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

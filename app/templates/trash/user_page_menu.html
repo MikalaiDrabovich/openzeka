@@ -1,0 +1,51 @@
+{% extends 'common/page_base.html' %}
+{% block content %}
+    <div class="row">
+        <!-- Title Block -->
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 title-block">
+            <!-- Title Block Container -->
+            <div class="title-block-container text-center">
+
+                <!-- Title -->
+                <h2>{% trans %}Welcome to User Page{% endtrans %}</h2>
+
+
+            </div><!-- /End Title Block Container -->
+        </div><!-- /End Title Block -->
+        <div class="col-xs-6 col-md-4">
+            <!-- Content Block Container -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <!-- Block Number -->
+                    <h1 class="number-block"><i class="fa fa-life-ring"></i></h1>
+
+                    <!-- Title -->
+                    <h4>
+                        Documentation
+                        <br>
+                        24/7 support
+                    </h4>
+
+                    <!-- Description -->
+                    <p>We will release both script and documentation 28th Sep 2016 at GPU Technology
+                        Conference/Amsterdam.</p>
+
+                    <ul class="list-icon">
+                        <li><i class="glyphicon glyphicon-phone"></i> +90 507 184-4553</li>
+                        <li><i class="glyphicon glyphicon-envelope"></i> info@openzeka.com</li>
+                    </ul>
+
+                    <!-- Buttons -->
+                    <a href="{{ url_for('core.home_page') }}#contact-section" title="Contact Us">
+                        <button type="button" class="btn btn-info">Contact Us</button>
+                    </a>
+                </div>
+
+            </div><!-- /End Content Block Container -->
+        </div>
+
+{% block user_content %}{% endblock %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'flask_user/flask_user_base.html' %}
+{% block content %}
+    <div class="row">
+        <!-- Title Block -->
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 title-block">
+            <!-- Title Block Container -->
+            <div class="title-block-container text-center">
+
+                <!-- Title -->
+                <h2>{% trans %}Welcome to User Page{% endtrans %}</h2>
+
+
+            </div><!-- /End Title Block Container -->
+        </div><!-- /End Title Block -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <!-- Content Block Container -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="{{ url_for('core.user_profile_page') }}" title="Profile" class="list-group-item ">
+                            <h2 class="list-group-item-heading"><span class="glyphicon glyphicon-edit"></span> Profile</h2>
+                            <p class="list-group-item-text">Edit your profile.</p>
+                        </a>
+                        <a href="{{ url_for('core.list_application') }}" title="Applications" class="list-group-item">
+                            <h2 class="list-group-item-heading"><span class="glyphicon glyphicon-plus"></span> Applications</h2>
+                            <p class="list-group-item-text">Create and edit applications.</p>
+                        </a>
+                        <a href="{{ url_for('core.usage_report') }}" class="list-group-item">
+                            <h2 class="list-group-item-heading"><span class="glyphicon glyphicon-stats"></span> Usage</h2>
+                            <p class="list-group-item-text">Follow your monthly usage.</p>
+                        </a>
+                        <a href="{{ url_for('core.billing_page') }}" class="list-group-item list-group-item-info">
+                            <h2 class="list-group-item-heading"><span class="glyphicon glyphicon-usd"></span> Billing</h2>
+                            <p class="list-group-item-text">Change billing settings.</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- /End Content Block Container -->
+        </div>
+
+
+        {% block user_content %}{% endblock %}
+
+    </div>
+{% endblock %}

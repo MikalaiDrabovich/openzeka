@@ -1,0 +1,60 @@
+{% extends 'flask_user/public_base.html' %}
+{% from "common/form_macros.html" import render_checkbox_field_openzeka, render_field_openzeka, render_submit_field %}
+{% block content %}
+<div class="col-sm-12">
+<div class="panel panel-default form-box">
+  <div class="panel-body">
+  <h1 class="text-center">{%trans%}Register{%endtrans%}</h1>
+<form action="" method="POST" novalidate formnovalidate class="form-horizontal" role="form">
+    {{ form.hidden_tag() }}
+
+    {# Username or Email #}
+    {% set field = form.username if user_manager.enable_username else form.email %}
+    <div class="form-group {% if field.errors %}has-error{% endif %}">
+        <label for="{{ field.id }}" class="col-sm-4 control-label">{{ field.label.text }}</label>
+        <div class="col-sm-8">
+        {{ field(class_='form-control', placeholder= label|safe) }}
+        {% if field.errors %}
+            {% for e in field.errors %}
+                 <label class="control-label">{{ e }}</label>
+            {% endfor %}
+        {% endif %}
+    </div>
+    </div>
+
+    {% if user_manager.enable_email and user_manager.enable_username %}
+        {{ render_field_openzeka(form.email) }}
+    {% endif %}
+
+    {{ render_field_openzeka(form.first_name) }}
+
+    {{ render_field_openzeka(form.last_name) }}
+
+    {{ render_field_openzeka(form.password) }}
+
+    {% if user_manager.enable_retype_password %}
+        {{ render_field_openzeka(form.retype_password) }}
+    {% endif %}
+    {{ render_checkbox_field_openzeka(form.signup_terms, class="form-control", label= 'I have read and agreed to OpenZeka <a href="#" title="terms and conditions">terms and conditions</a>.') }}
+
+    {{ render_submit_field(form.submit, class="btn btn-primary btn-block") }}
+
+                                            <!-- Title -->
+                                        <div class="col-sm-offset-4 col-sm-8">
+                                            <div class="form-group text-center">
+                                                <h5>{%trans%}Already registered? Sign in.{%endtrans%}</h5>
+                                            </div>
+                                        </div><!-- /End Title -->
+                                            <!-- Sign IN -->
+                                        <div class="col-sm-offset-4 col-sm-8">
+                                            <div class="form-group">
+                                                <a href="{{ url_for('user.login') }}" title="Sign In" class="btn btn-success btn-block">{%trans%}Sign In{%endtrans%}</a>
+                                            </div>
+                                        </div><!-- /End Sign IN -->
+</form>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

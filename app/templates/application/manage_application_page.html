@@ -1,0 +1,29 @@
+{% extends 'flask_user/member_base.html' %}
+{% from "common/form_macros.html" import render_field, render_submit_field, render_field_openzeka %}
+{% block user_content %}
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2 class="text-center">{% trans %}Edit Application{% endtrans %}</h2>
+                <form action="" method="POST" novalidate formnovalidate class="form-horizontal" role="form">
+                    {{ form.hidden_tag() }}
+                    {{ render_field_openzeka(form.application_name, value=application.application_name) }}
+                    {{ render_field_openzeka(form.client_id, value=application.client_id, readonly=true) }}
+                    {{ render_field_openzeka(form.client_secret, value=application.client_secret, readonly=true) }}
+                    <div class="form-group">
+                        <label for="client_token" class="col-sm-4 control-label"><strong><a
+                                href="#{{ application.client_id }}#{{ application.client_secret }}"
+                                title="Generate Token"
+                                id="generate_token"><span
+                                class="glyphicon glyphicon-refresh glyphicon-spin"></span>Generate
+                            Token</a></strong></label></span>
+                        <div class="col-sm-8">
+                            <strong><span id="client_token{{ application.client_id }}"></span></strong>
+                        </div>
+                    </div>
+                    {{ render_submit_field(form.submit, class="btn btn-primary btn-block") }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

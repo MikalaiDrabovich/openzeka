@@ -1,0 +1,72 @@
+{% extends 'flask_user/public_base.html' %}
+{% from "common/form_macros.html" import render_checkbox_field_openzeka, render_field_openzeka, render_submit_field %}
+{% block content %}
+    <div class="col-sm-12">
+        <div class="panel panel-default form-box">
+            <div class="panel-body">
+                <h1 class="text-center">{% trans %}Sign in{% endtrans %}</h1>
+                <form action="" method="POST" class="form-horizontal" role="form">
+                    {{ form.hidden_tag() }}
+
+                    {# Username or Email field #}
+                    {% set field = form.username if user_manager.enable_username else form.email %}
+                    <div class="form-group {% if field.errors %}has-error{% endif %}">
+                        <label for="{{ field.id }}" class="col-sm-4 control-label">{{ field.label.text }}</label>
+                        <div class="col-sm-8">
+                            {{ field(class_='form-control', placeholder= label|safe) }}
+                            {% if field.errors %}
+                                {% for e in field.errors %}
+                                    <p class="help-block">{{ e }}</p>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-4 col-sm-8 text-right">
+                        {% if user_manager.enable_forgot_password %}
+                            <a href="{{ url_for('user.forgot_password') }}">
+                                {% trans %}Forgot your Password?{% endtrans %}</a>
+                        {% endif %}
+                    </div>
+                    {# Password field #}
+                    {% set field = form.password %}
+                    <div class="form-group {% if field.errors %}has-error{% endif %}">
+                        <label for="{{ field.id }}" class="col-sm-4 control-label">{{ field.label.text }}</label>
+                        <div class="col-sm-8">
+                            {{ field(class_='form-control', placeholder= label|safe) }}
+                            {% if field.errors %}
+                                {% for e in field.errors %}
+                                    <p class="help-block">{{ e }}</p>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {# Remember me #}
+                    {% if user_manager.enable_remember_me %}
+                        {{ render_checkbox_field_openzeka(login_form.remember_me) }}
+                    {% endif %}
+
+                    {# Submit button #}
+                    {{ render_submit_field(form.submit, class="btn btn-primary btn-block") }}
+
+                    <!-- Title -->
+                    {% if user_manager.enable_register and not user_manager.require_invitation %}
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <div class="form-group text-center">
+                                <h5>{% trans %}New here? Register.{% endtrans %}</h5>
+                            </div>
+                        </div><!-- /End Title -->
+                        <!-- Sign IN -->
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <div class="form-group">
+                                <a href="{{ url_for('user.register') }}"
+                                   title="{% trans %}New here? Register.{% endtrans %}"
+                                   class="btn btn-success btn-block">{% trans %}Sign Up{% endtrans %}</a>
+                            </div>
+                        </div><!-- /End Sign IN -->
+                    {% endif %}
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

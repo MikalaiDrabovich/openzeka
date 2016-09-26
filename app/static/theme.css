@@ -1,0 +1,172 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+    margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+    width: auto;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+/*OpenZeka: Homepage thumnail*/
+.thumbnail img {
+    min-height:100px;
+    min-width: 100px;
+    height:auto;
+    width: auto}
+
+.oz_left {
+    padding-left: 0px;
+}
+
+.oz_right {
+    padding-right: 0px;
+}
+
+.rcorners2 {
+    border-radius: 0px 10px 5px 0px;
+    border: 2px solid #2962FF;
+    /*padding: 20px;*/
+    /*height: inherit;*/
+
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    border-width: 0;
+}
+
+.nav-stacked > li + li {
+    margin-top: 0px;
+}
+
+.nav-tabs > li > a {
+    /*padding: 50px 100px 50px 100px !important;*/
+    color: #AAAAAA;
+    background-color: #E3F2FD;
+    border: 0px;
+    border-radius: 0px;
+    margin: 0;
+}
+
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+    background-color: #448AFF;
+    color: #FFFFFF;
+    z-index: 99;
+    transition: all 0.5s ease 0s;
+}
+
+.nav-tabs > li.active > a {
+    color: #FFFFFF;
+    background-color: #2962FF;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, .6);
+    z-index: 100;
+}
+
+.nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #FFFFFF;
+    background-color: #2962FF;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, .6);
+    transition: all 0.5s ease 0s;
+}
+
+/* OpenZeka:Progress bar*/
+.progress {
+    /*position: relative;*/
+    margin: 0px;
+}
+
+.form-box {
+    max-width: 530px;
+    padding: 5px;
+    margin: 0 auto;
+    border: 2px solid #2962FF;
+    border-radius: 15px 15px 15px 0px;
+}
+
+.label {
+  display: inline-block;
+}
+/*OpenZeka: Homepage image search form*/
+.search-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*OpenZeka: process time sytle*/
+.bottom-align-text {
+    /*position: absolute;*/
+    bottom: 0;
+    right: 0;
+}
+
+/*OpenZeka: Edit profile, change password box*/
+.edit-box{
+    padding-right: 50px;
+    padding-left: 30px;
+}
+
+/*OpenZeka: Apllication list row height*/
+.row-height{
+    line-height: 35px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+/*OpenZeka: Create Application Button space*/
+.oz-space-up-20{
+    margin-top: 20px;
+}
+.oz_space_up_40{
+    margin-top: 40px;
+}
+/*generate token animated*/
+.glyphicon-spin {
+  -webkit-animation: spin 1000ms infinite linear;
+  animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

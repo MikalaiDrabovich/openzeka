@@ -1,0 +1,44 @@
+{% extends 'flask_user/member_base.html' %}
+{% block user_content %}
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {% set usage_status = (latest_month[6]|int / latest_month[7]|int) * 100 %}
+                <div>Latest Month - Usage limit {{ latest_month[6] }}/{{ latest_month[7] }}</div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                         aria-valuenow="{{ usage_status }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100" style="min-width: 4em;width: {{ usage_status }}%">
+                        {{ usage_status }}%</span>
+                    </div>
+                </div>
+                <div class="text-center">{{ latest_month[0]+','+latest_month[1]+','+latest_month[2] }}
+                    - {{ latest_month[3]+','+latest_month[4]+','+latest_month[5] }}</div>
+            </div>
+        </div>
+
+        {% if has_old_month %}
+            <div>Old Usages</div>
+            {% for month in old_months_with_usage %}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {% set latest_month = month.split(',') %}
+                        {% set usages_status = (latest_month[6]|int / latest_month[7]|int) * 100 %}
+                        <div>Usage limit {{ latest_month[6] }}/{{ latest_month[7] }}</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar{{ progres_bar[(loop.index)] }} progress-bar-striped" role="progressbar"
+                                 aria-valuenow="{{ usages_status }}"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100" style="min-width: 4em;width: {{ usages_status }}%">
+                                {{ usages_status }}%</span>
+                            </div>
+                        </div>
+                        <div class="text-center">{{ latest_month[0]+','+latest_month[1]+','+latest_month[2] }}
+                            - {{ latest_month[3]+','+latest_month[4]+','+latest_month[5] }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
