@@ -67,6 +67,7 @@ First-time running will create OpenZeka database with 2 users. You can use this 
 
 ## Acknowledgements
 * [Caffe](http://caffe.berkeleyvision.org)
+
 With thanks to the following Flask extensions:
 * [Flask-User](http://pythonhosted.org/Flask-User/)
 * [Flask-User-starter-app](https://github.com/lingthio/Flask-User-starter-app)
