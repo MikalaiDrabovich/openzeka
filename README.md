@@ -66,10 +66,10 @@ First-time running will create OpenZeka database with 2 users. You can use this 
 * Includes `alembic` database migration framework
 
 ## Acknowledgements
-* [Caffe](caffe.berkeleyvision.org)
+* [Caffe](http://caffe.berkeleyvision.org)
 With thanks to the following Flask extensions:
-* [Flask-User](pythonhosted.org/Flask-User/)
-* [Flask-User-starter-app](github.com/lingthio/Flask-User-starter-app)
-* [Flask-OAuthlib](github.com/lepture/flask-oauthlib)
-* [Alembic](alembic.readthedocs.org)
-* [Flask-Migrate](flask-migrate.readthedocs.org)
+* [Flask-User](http://pythonhosted.org/Flask-User/)
+* [Flask-User-starter-app](https://github.com/lingthio/Flask-User-starter-app)
+* [Flask-OAuthlib](https://github.com/lepture/flask-oauthlib)
+* [Alembic](http://alembic.zzzcomputing.com/en/latest/)
+* [Flask-Migrate](http://flask-migrate.readthedocs.io/en/latest/)
