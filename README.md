@@ -18,8 +18,7 @@ We prepared easy install script. You can click and follow instructions.
  2. [Installing OpenZeka for Ubuntu 16.04](https://github.com/ferhatkurt/openzeka/wiki/Installing-OpenZeka-for-Ubuntu-16.04)
  3. [Installing OpenZeka for Jetson TX1](https://github.com/ferhatkurt/openzeka/wiki/Installing-OpenZeka-for-Jetson-TX1)
  4. [Installing OpenZeka for Jetson TK1](https://github.com/ferhatkurt/openzeka/wiki/Installing-OpenZeka-for-Jetson-TK1)
-
-If you want to use virtual enviroment install [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/install.html) then install OpenZeka.
+ 5. **[If you want to use virtual enviroment you can try to install OpenZeka with virtualenvwrapper](https://github.com/ferhatkurt/openzeka/wiki/Virtualenvwrapper-for-OpenZeka)**
 
 # Configuration of OpenZeka
 
@@ -48,7 +47,7 @@ First-time running will create OpenZeka database with 2 users. You can use this 
  - email `user@example.com` with password `Password1`.
  - email `admin@example.com` with password `Password1`.
 
-**You can also try to install OpenZeka with [virtualenvwrapper](github.com/ferhatkurt/openzeka/wiki/Virtualenvwrapper-for-OpenZeka)**
+**You can also try to install OpenZeka with [virtualenvwrapper](https://github.com/ferhatkurt/openzeka/wiki/Virtualenvwrapper-for-OpenZeka)**
 
 ## Developer benefits
 * Tested on Python 2.7, 3.3, and 3.4
