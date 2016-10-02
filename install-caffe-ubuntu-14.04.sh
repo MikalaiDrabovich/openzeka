@@ -26,6 +26,9 @@ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev -y
 #sudo pip install numpy
 sudo apt-get install -y python-numpy
 
+# (OpenCV 2.4)
+sudo apt-get install -y libopencv-dev
+
 sudo usermod -a -G video $USER
 /bin/echo -e "\e[1;32mCloning Caffe into the home directory\e[0m"
 # Place caffe in the home directory
@@ -33,18 +36,6 @@ cd ~/
 # Git clone Caffe
 git clone https://github.com/BVLC/caffe.git
 cd caffe
-
-##Additional
-#sudo apt-get install -y python-pip
-#sudo pip install scipy # required by scikit-image
-#sudo apt-get install -y python-scipy # in case pip failed
-
-#cd python
-#for req in $(cat requirements.txt); do sudo pip install $req; done
-#echo "export PYTHONPATH=$(pwd):$PYTHONPATH " >> ~/.bashrc # to be able to call "import caffe" from Python after reboot
-#source ~/.bashrc # Update shell
-#sudo ldconfig
-#cd ..
 
 cp Makefile.config.example Makefile.config
 # Enable cuDNN usage
