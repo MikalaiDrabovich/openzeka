@@ -5,6 +5,9 @@
 sudo apt-get install python-cffi-backend
 sudo apt-get install libffi-dev
 
+sudo apt-get install -y python-pip
+sudo pip install pyyaml
+
 sudo pip install -r requirements.txt
 
 # Reference CaffeNet Model and the ImageNet Auxiliary Data
